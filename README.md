@@ -23,11 +23,13 @@ FYI: [**Why I'm learning Front-End Development?**](/myjourneyintotech/WhyILearni
   - [7.2. Output - Display data](#72-output---display-data)
   - [7.3. Syntax](#73-syntax)
   - [7.4. Variables (4 ways to declare)](#74-variables-4-ways-to-declare)
-  - [7.5. Functions](#75-functions)
-  - [7.6. Objects](#76-objects)
-  - [7.7. Events](#77-events)
-  - [7.8. Strings](#78-strings)
-  - [7.9. Conditions](#79-conditions)
+  - [7.5. Events](#75-events)
+  - [7.6. Strings](#76-strings)
+  - [7.7. Numbers](#77-numbers)
+  - [7.8. Boolean](#78-boolean)
+  - [7.9. Objects](#79-objects)
+  - [7.10. Functions](#710-functions)
+  - [7.11. Conditions](#711-conditions)
 - [8. JQuery](#8-jquery)
 - [9. React](#9-react)
   - [9.1. JSX](#91-jsx)
@@ -170,34 +172,7 @@ const person = {firstName:"John",
               lastName:"Doe"};            // Object 
 person.firstName = "Alice";
 ```
-## 7.5. Functions
-```
-function myFunction(parameter1,parameter2) {
-    if (parameter1>parameter2)
-    {
-        return;
-    }
-    return parameter1 * parameter2;
-}
-document.getElementById("demo").innerHTML=myFunction(4,3);
-```
-## 7.6. Objects
-```
-const person = {
-  firstName: "John",
-  lastName: "Doe",
-  age: 50,
-  eyeColor: "blue"
-  fullName : function() {
-    return this.firstName + " " + this.lastName;
-  }
-};
-```
-Accessing Object Properties:  
-* objectName.propertyName - Ex: person.lastName;
-* objectName["propertyName"] - Ex: person["lastName"];
-* objectName.methodName() - Ex: name = person.fullName();
-## 7.7. Events
+## 7.5. Events
 * An HTML web page has finished loading
 * An HTML input field was changed
 * An HTML button was clicked
@@ -205,7 +180,7 @@ Accessing Object Properties:
 <button onclick="this.innerHTML = Date()">The time is?</button>
 <button onclick="displayDate()">The time is?</button>
 ```
-## 7.8. Strings
+## 7.6. Strings
 ```
 var carName = 'Volvo';
 let text = "a,b,c,d,e,f";
@@ -237,9 +212,140 @@ typeof y                        // return Object
 | search() | carName.search("o") | 1 |
 | match(regexp)) | carName.match(/o/gi) | o,o |
 | includes(searchvalue, start) | carName.includes("f", 0) | false |
-| startsWith() | carName.startsWith() | VOLVO |
-| toLowerCase() | carName.toLowerCase() | volvo |
-## 7.9. Conditions
+| startsWith() | carName.startsWith("V") | true |
+| endsWith() | carName.endsWith("e") | false |
+
+**Tips**: convert any data to string using "+"
+```
+var numVal=2;
+var boolVal=false;
+var nullVal=null;
+var undefinedVal=undefined;
+
+var numValPlus=numVal+"";            //2 string
+var boolValPlus=boolVal+"";          //false string
+var nullPlus=nullVal+"";             //null string
+var undefinedPlus=undefinedVal+"";   //undefined string
+console.log([1,2,3,4]+"");           //1,2,3,4 string
+```
+## 7.7. Numbers
+```
+let number = 5;  
+var testNull= null;  
+var evalVal = "1 + 2";
+```
+| Name | Example | Output |
+| --- | --- | ---|
+| Number() | Number(true); Number(" 11"); Number(null); Number(undefined)| 0 11 0 NaN//number |
+| parseInt() | parseInt("120abc"); | 120 //number |
+| valueOf() | value("123"); | 123 //number |
+| Number() | Number(true); Number(" 10"); | 0 10 //number |
+| toString() | number.toString(); | 5 //string |
+| String() | String(testNull); | null //string(null/undefined must use String()) |
+| Eval() | eval(evalVal); | 3 //number |  
+  
+* NaN - Not a Number
+  * isNaN - false(can convert to number), true(can not covert number)
+  * console.log(NaN == NaN)  //false
+
+## 7.8. Boolean
+* True - everything with a value
+   * Boolean(Object); 
+* False - no value  
+   * Boolean(0); 
+   * Boolean(-0);
+   * Boolean(NaN);
+   * Boolean("");
+   * Boolean(undefined);
+   * Boolean(false);
+   * Boolean(null);  
+  
+**Caution**: Comparing two JavaScript objects always return **false**.
+## 7.9. Objects
+```
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+``` 
+* Definition - a collection of named values, mutable
+* Declare - `const o = {}` or `const o = new Object()` or const o ={name:"a",age:2} (recommend))
+* Accessing Object Properties:    
+   * `objectName.property` Ex: `person.age`
+   * `objectName["property"]` Ex: `person["age"]`
+   * `objectName.methodName()` - Ex: `person.fullName()`
+   * add new property - `objectName.newProperty` Ex: `person.gender`
+   * delete property - `delete objectName.property` Ex: `delete person.age`
+* Print Object(covert Object to string) 
+   * loop an object - `for(let v in object){}` Ex: `for(let v in person){ txt +=person(v)}` 
+   * Use `Object.values()` Ex:`Object.values(person)`
+   * Use `JSON.stringify()` Ex: `JSON.stringify(person)`
+* Constructor
+```
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.name = function() {
+    return this.firstName + " " + this.lastName;
+  };
+}
+```
+  Use **prototype** Add new property to object constructors - `Person.prototype.nationality = "English";`  
+* Methods  
+   * `hasOwnProperty(prop)` - check if the object has that prop
+   * `isPrototypeOf(o)` - check if the object inherit from o
+   * `propertyIsEnumerable(prop)` - check the prop can use for-in to loop
+   * `call()` - invoke a method with an owner object as an argument 
+   * `apply()` - similar to call() but takes arguments as an array
+   * `bind()` - borrow a method from another object
+## 7.10. Functions
+```
+function myFunction(parameter1,parameter2) {
+    if (parameter1>parameter2)
+    {
+        return;
+    }
+    return parameter1 * parameter2;
+}
+document.getElementById("demo").innerHTML=myFunction(4,3);
+//Arrow Functions using ES6
+const multiplier = (item, multi) => item * multi;
+const multiplier = (item, multi) => {return item * multi;}
+multiplier(4, 2); //8
+```
+## 7.11. Conditions
+* If Else
+```
+ if (condition1)
+{    code
+}else if (condition2)
+{    code
+}else
+{  code
+}
+```
+* Switch
+```
+switch(n) {
+    case 1:
+        code
+        break;
+    case 2:
+        code
+        break;
+    default:
+        not in case 1 and 2 code
+}
+```
+* Loop
+* While
+  
 
   # 8. JQuery
 # 9. React
