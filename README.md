@@ -14,13 +14,20 @@ FYI: [**Why I'm learning Front-End Development?**](/myjourneyintotech/WhyILearni
   - [4.1. Two Type of Elements](#41-two-type-of-elements)
   - [4.2. Attributes - class/id/title](#42-attributes---classidtitle)
 - [5. CSS](#5-css)
-  - [5.1. CSS Pseudo-class](#51-css-pseudo-class)
-  - [5.2. CSS Pseudo-element](#52-css-pseudo-element)
-  - [5.3. Flexbox](#53-flexbox)
-  - [5.4. Grid](#54-grid)
-  - [5.5. SASS](#55-sass)
+  - [5.1. Flexbox](#51-flexbox)
+  - [5.2. Grid](#52-grid)
+  - [5.3. SASS](#53-sass)
 - [6. Bootstrap](#6-bootstrap)
 - [7. Javascript](#7-javascript)
+  - [7.1. JavaScript Where To](#71-javascript-where-to)
+  - [7.2. Output - Display data](#72-output---display-data)
+  - [7.3. Syntax](#73-syntax)
+  - [7.4. Variables (4 ways to declare)](#74-variables-4-ways-to-declare)
+  - [7.5. Functions](#75-functions)
+  - [7.6. Objects](#76-objects)
+  - [7.7. Events](#77-events)
+  - [7.8. Strings](#78-strings)
+  - [7.9. Conditions](#79-conditions)
 - [8. JQuery](#8-jquery)
 - [9. React](#9-react)
   - [9.1. JSX](#91-jsx)
@@ -80,7 +87,7 @@ How Do HTML, CSS and JavaScript Work Together? (Below is an example to understan
   All of these ‘bodily aspects’ need to work together to form a functional, visually appealing, interactive website.
 # 4. HTML5
 HTML is a markup language that uses a special syntax or notation to describe the structure of a webpage to the browser.  
-Cheat sheet: visit https://htmlcheatsheet.com/
+HTML5 Cheatsheet: visit https://htmlcheatsheet.com/  
 Reference Docs: visit https://www.w3schools.com/html/default.asp  
 Practice link: visit https://www.freecodecamp.org/learn/responsive-web-design/  
 **Must Have** extensions list in VS Code for HTML5  
@@ -107,25 +114,134 @@ Practice link: visit https://www.freecodecamp.org/learn/responsive-web-design/
 
 # 5. CSS 
 CSS is to style an HTML document and describes how HTML elements should be displayed.
-## 5.1. CSS Pseudo-class
+## 5.1. Flexbox
 * *To be continued...*
-## 5.2. CSS Pseudo-element
+## 5.2. Grid
 * *To be continued...*
-## 5.3. Flexbox
-* *To be continued...*
-## 5.4. Grid
-* *To be continued...*
-## 5.5. SASS
+## 5.3. SASS
 * *To be continued...*
   
 **Must Have** extensions list in VS Code for CSS 
 * [*HTML CSS Support*](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css) - HTML id and class attribute completion
 * [*CSS Peek*](https://marketplace.visualstudio.com/items?itemName=pranaygp.vscode-css-peek) - Allow peeking to css ID and class strings as definitions from html files to CSS
+* [*CSS Flexbox Cheatsheet*](https://marketplace.visualstudio.com/items?itemName=dzhavat.css-flexbox-cheatsheet) -  Lets you open a flexbox cheatsheet directly in the editor.
 * [*Colorize*](https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize) - Help visualize css colors in files
  * *To be continued...*
 # 6. Bootstrap 
 # 7. Javascript
-# 8. JQuery
+JavaScript is one of the core technologies of the web design, along with HTML and CSS, and is supported by all modern browsers. 
+## 7.1. JavaScript Where To
+* Internal  - In HTML, JavaScript code is inserted between `<script>` and `</script>` tags in `<head>` or `<body>` section. 
+Should place at the bottom of the `<body>` element improves the display speed.
+* External(Recommend) - Place `<script src="myScript.js"></script>` in `<head>` or `<body>`
+## 7.2. Output - Display data
+* Writing into an HTML element, using `innerHTML`.  
+  Ex: `document.getElementById("id").innerHTML = 5 + 6;`
+* Writing into the HTML output using `document.write()`  
+  Ex: `document.write(5 + 6);` (Used for testing)  
+  ***Caution***:Using document.write() after an HTML document is loaded, will **delete** all existing HTML:
+* Writing into an alert box, using `alert()`  
+  Ex: `alert(5 + 6);`
+* Writing into the browser console, using `console.log()`
+  Ex: `console.log(5 + 6);` (Used for debugging)
+## 7.3. Syntax
+* All JavaScript identifiers are **case sensitive** and follow **camelCase** rule.
+* Two types of values: **fixed(or literals)** and **variables**  
+  Fixed include **Numbers** (3.14, 100, 1e4) and **String** ('John',"John")
+## 7.4. Variables (4 ways to declare)
+* Using `var` - can be Redeclare
+* Using `let` - 
+    * cannot be Redeclared
+    * must be Declared before use
+    * have Block Scope
+    * can be Resignned
+* Using `const`(General rule, always declare a variable with `const`) -
+  *  have Block Scope
+  *  cannot be Redeclared
+  *  cannot be Reassigned
+* Using nothing
+``` 
+var length = 16;                          // Number 
+let points = x * 10;                      // Number 
+var lastName = "Johnson";                 // String 
+const cars = ["Saab", "Volvo", "BMW"];    // Array  
+cars[0] = "Toyota";
+const person = {firstName:"John", 
+              lastName:"Doe"};            // Object 
+person.firstName = "Alice";
+```
+## 7.5. Functions
+```
+function myFunction(parameter1,parameter2) {
+    if (parameter1>parameter2)
+    {
+        return;
+    }
+    return parameter1 * parameter2;
+}
+document.getElementById("demo").innerHTML=myFunction(4,3);
+```
+## 7.6. Objects
+```
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+```
+Accessing Object Properties:  
+* objectName.propertyName - Ex: person.lastName;
+* objectName["propertyName"] - Ex: person["lastName"];
+* objectName.methodName() - Ex: name = person.fullName();
+## 7.7. Events
+* An HTML web page has finished loading
+* An HTML input field was changed
+* An HTML button was clicked
+```
+<button onclick="this.innerHTML = Date()">The time is?</button>
+<button onclick="displayDate()">The time is?</button>
+```
+## 7.8. Strings
+```
+var carName = 'Volvo';
+let text = "a,b,c,d,e,f";
+var character = carName[0];     //Output V
+var x = "John";
+var y = new String("John");
+typeof x                        // return String
+typeof y                        // return Object
+```
+**Caution**: **Don't** create String object, it will slow the performance.  
+
+| Name | Example | Output |
+| --- | --- | ---|
+| length | carName.length; | 5 |
+| slice(start, end) | carName.slice(2,4) | lv (end not include)|
+| slice(start, end) | carName.slice(-4,-2) | ol (negative, count from the end) |
+| slice(start) | carName.slice(2) | lvo (count to the end) |
+| substring(start, end) | carName.substring(2,4) | lv |
+| substr(start, length) | carName.substr(1, 3) | olv |
+| replace("string","new String") | carName.replace("o", "t") | Vtlvo (replaces **only the first match**) |
+| toUpperCase() | carName.toUpperCase() | VOLVO |
+| toLowerCase() | carName.toLowerCase() | volvo |
+| concat() | carName."Hello".concat(" ", "World!"); | Volvo World |
+| trim() | carName.trim() | Volvo |
+| charAt() | carName.charAt(2); | l |
+| split() | text.split(",")[0] | a(A string can be converted to an array) |
+| indexOf() | carName.indexOf("o") | 1（first occurrence）|
+| lastIndexOf() | carName.lastIndexOf("o") | 4（last occurrence） |
+| search() | carName.search("o") | 1 |
+| match(regexp)) | carName.match(/o/gi) | o,o |
+| includes(searchvalue, start) | carName.includes("f", 0) | false |
+| startsWith() | carName.startsWith() | VOLVO |
+| toLowerCase() | carName.toLowerCase() | volvo |
+## 7.9. Conditions
+
+  # 8. JQuery
 # 9. React
 ## 9.1. JSX
 ## 9.2. Component
@@ -133,7 +249,3 @@ CSS is to style an HTML document and describes how HTML elements should be displ
 # 11. To be continued..
 # 12. Reference
 
-| Name | Description |
-| --- | --- |
-| Editor | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
