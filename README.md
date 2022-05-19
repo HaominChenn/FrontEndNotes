@@ -29,14 +29,14 @@ FYI: [**Why I'm learning Front-End Development?**](/myjourneyintotech/WhyILearni
   - [7.8. Boolean](#78-boolean)
   - [7.9. Objects](#79-objects)
   - [7.10. Functions](#710-functions)
-  - [7.11. Conditions](#711-conditions)
-- [8. JQuery](#8-jquery)
-- [9. React](#9-react)
-  - [9.1. JSX](#91-jsx)
-  - [9.2. Component](#92-component)
-- [10. Redux](#10-redux)
-- [11. To be continued..](#11-to-be-continued)
-- [12. Reference](#12-reference)
+  - [7.11. Array](#711-array)
+  - [7.12. Conditions](#712-conditions)
+- [8. React](#8-react)
+  - [8.1. JSX](#81-jsx)
+  - [8.2. Component](#82-component)
+- [9. Redux](#9-redux)
+- [10. To be continued..](#10-to-be-continued)
+- [11. Reference](#11-reference)
 # 2. Environment Setup
 ## 2.1. Editor 
 ### 2.1.1. Visual Studio Code (Highly Recommend)
@@ -319,7 +319,14 @@ const multiplier = (item, multi) => item * multi;
 const multiplier = (item, multi) => {return item * multi;}
 multiplier(4, 2); //8
 ```
-## 7.11. Conditions
+## 7.11. Array
+const arr = [ 1,2,3 ];
+* `push()` - append data to the end of an array Ex: `arr.push(4)` //1,2,3,4
+* `pop()` - remove the last element from an array Ex: `arr.pop()` //1,2
+* `shift()` - remove the first element from an array Ex: `arr.shift()`  //2,3 
+* `unshift()` - add the element at the beginning of the array Ex `arr.unshift(0)` //0,1,2,3
+* 
+## 7.12. Conditions
 * If Else
 ```
  if (condition1)
@@ -347,11 +354,34 @@ switch(n) {
 * While
   
 
-  # 8. JQuery
-# 9. React
-## 9.1. JSX
-## 9.2. Component
-# 10. Redux
-# 11. To be continued..
-# 12. Reference
+# 8. React
+React is an Open Source view library created and maintained by Facebook. It's a great tool to render the User Interface (UI) of modern web applications.
+## 8.1. JSX
+JSX is a syntax extension of JavaScript that allows you to write HTML directly within JavaScript. 
+```
+// create a JSX element
+<script>
+const JSX = (
+  <div>
+    <h1>Hello, world!</h1>;
+    {/* This is a comment */}
+    <p>This is a new element.</p>
+  </div>
+  );
+
+// Render JSX to HTML, using
+// ReactDOM.render(componentToRender, targetNode);
+ReactDOM.render(
+    JSX,
+    document.getElementById('example')
+);  
+</script>
+```
+JSX Rules:
+* Nested JSX is that it must return a single element. Use `<div>` to wrap
+* 
+## 8.2. Component
+# 9. Redux
+# 10. To be continued..
+# 11. Reference
 
