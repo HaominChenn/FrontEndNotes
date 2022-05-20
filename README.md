@@ -32,6 +32,7 @@ FYI: [**Why I'm learning Front-End Development?**](/myjourneyintotech/WhyILearni
   - [7.11. Array](#711-array)
   - [7.12. Conditions](#712-conditions)
 - [8. React](#8-react)
+  - [Add React to an HTML page](#add-react-to-an-html-page)
   - [8.1. JSX](#81-jsx)
   - [8.2. Component](#82-component)
 - [9. Redux](#9-redux)
@@ -356,13 +357,37 @@ switch(n) {
 
 # 8. React
 React is an Open Source view library created and maintained by Facebook. It's a great tool to render the User Interface (UI) of modern web applications.
+## Add React to an HTML page
+```
+<!DOCTYPE html>
+<html lang="en">
+<title>Test React</title>
+
+<!-- Load React API -->
+<script src= "https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<!-- Load React DOM-->
+<script src= "https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<!-- Load Babel Compiler -->
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+<body>
+
+<script type="text/babel">
+    //  JSX Babel code goes here
+</script>
+
+</body>
+</html>
+```
+Also can set up in VScode using following command `npx create-react-app myFirstApp`  
+Run the app using `npm start`
 ## 8.1. JSX
 JSX is a syntax extension of JavaScript that allows you to write HTML directly within JavaScript. 
 ```
 // create a JSX element
 <script>
 const JSX = (
-  <div>
+  <div className='myDiv'>
     <h1>Hello, world!</h1>;
     {/* This is a comment */}
     <p>This is a new element.</p>
@@ -379,8 +404,72 @@ ReactDOM.render(
 ```
 JSX Rules:
 * Nested JSX is that it must return a single element. Use `<div>` to wrap
-* 
+* JSX uses **className** keyword to define an HTML class
 ## 8.2. Component
+Two ways to create a React component  
+* Using a JavaScript function - It creates a **stateless** functional component and receive data then render it, but not track changes.
+```
+// using JS Function
+const DemoComponent = function HelloMessage(props) {
+    return <div className='customClass' />;
+}
+
+//using ES6 class syntax
+class Welcome extends React.Component {
+   constructor(props) {
+    super(props);
+    this.state = {date: new Date()}
+  }
+  render() {
+    return (
+      <div>
+      <h1>Hello World!</h1>;
+      <h2>{this.state.date.toLocaleTimeString()}</h2>
+      </div>
+  }
+}
+ReactDOM.render(<Welcome />, document.getElementById("welcome"));
+
+//a customize component
+function HelloMessage(props) {
+    return <h1>Hello {props.name}!</h1>;
+}
+ 
+const element = <HelloMessage name="abc"/>;
+ 
+ReactDOM.render(
+    element,
+    document.getElementById('example')
+);
+
+//a composition(nested) component
+function Navbar(props) {
+    return <h1>website：{props.name}</h1>;
+}
+function Footer(props) {
+    return <h1>Copyright：{props.url}</h1>;
+}
+function App() {
+    return (
+    <div>
+        <Navbar name="myWebsite" />
+        <Footer url="http://www.mywebsite.com" />
+    </div>
+    );
+}
+ 
+ReactDOM.render(
+     <App />,
+    document.getElementById('example')
+);
+
+//use join(", ") to pass an array as props
+```
+* 
+
+
+Every React component can be self-closing: `<div />`
+
 # 9. Redux
 # 10. To be continued..
 # 11. Reference
