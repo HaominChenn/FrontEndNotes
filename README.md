@@ -1,6 +1,9 @@
 # 1. Front-end Learning Notes 
 A personal learning notes for front-end best practices including basic HTML, CSS, JS, SSAS, REACT, ES6, and JSX. Also, it is a cheat sheet for me when developing. Will update continuously...  
+**Collection of Useful Bookmarks** -> [*Go Here*](/bookmarks/bookmarks.md)
+
 FYI: [**Why I'm learning Front-End Development?**](/myjourneyintotech/WhyILearningFrontEndDevelopment.md)
+
 - [1. Front-end Learning Notes](#1-front-end-learning-notes)
 - [2. Environment Setup](#2-environment-setup)
   - [2.1. Editor](#21-editor)
@@ -32,9 +35,9 @@ FYI: [**Why I'm learning Front-End Development?**](/myjourneyintotech/WhyILearni
   - [7.11. Array](#711-array)
   - [7.12. Conditions](#712-conditions)
 - [8. React](#8-react)
-  - [Add React to an HTML page](#add-react-to-an-html-page)
-  - [8.1. JSX](#81-jsx)
-  - [8.2. Component](#82-component)
+  - [8.1. Environment Set up](#81-environment-set-up)
+  - [8.2. JSX](#82-jsx)
+  - [8.3. Component](#83-component)
 - [9. Redux](#9-redux)
 - [10. To be continued..](#10-to-be-continued)
 - [11. Reference](#11-reference)
@@ -357,7 +360,13 @@ switch(n) {
 
 # 8. React
 React is an Open Source view library created and maintained by Facebook. It's a great tool to render the User Interface (UI) of modern web applications.
-## Add React to an HTML page
+## 8.1. Environment Set up
+* Create React in VS code(recommend)
+  1. Install node.js
+  2. Open VS code and and select an folder to store the new app
+  3. In the terminal, enter command `npx create-react-app [app-name]` 
+  4. Run the app using `npm start`
+* Add React to an HTML page(not recommend)
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -372,16 +381,22 @@ React is an Open Source view library created and maintained by Facebook. It's a 
 
 <body>
 
+<div id="mydiv"></div>
+
 <script type="text/babel">
     //  JSX Babel code goes here
+     function Hello() {
+        return <h1>Hello World!</h1>;
+      }
+
+      ReactDOM.render(<Hello />, document.getElementById('mydiv'))
 </script>
 
 </body>
 </html>
 ```
-Also can set up in VScode using following command `npx create-react-app myFirstApp`  
-Run the app using `npm start`
-## 8.1. JSX
+
+## 8.2. JSX
 JSX is a syntax extension of JavaScript that allows you to write HTML directly within JavaScript. 
 ```
 // create a JSX element
@@ -405,7 +420,7 @@ ReactDOM.render(
 JSX Rules:
 * Nested JSX is that it must return a single element. Use `<div>` to wrap
 * JSX uses **className** keyword to define an HTML class
-## 8.2. Component
+## 8.3. Component
 Two ways to create a React component  
 * Using a JavaScript function - It creates a **stateless** functional component and receive data then render it, but not track changes.
 ```
