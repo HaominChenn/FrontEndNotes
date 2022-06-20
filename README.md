@@ -1,5 +1,6 @@
 # 1. Front-end Learning Notes 
-A personal learning notes for front-end best practices including basic HTML, CSS, JS, SSAS, REACT, ES6, and JSX. Also, it is a cheat sheet for me when developing. Will update continuously...  
+A personal learning notes for front-end best practices including basic HTML, CSS, JS, SSAS, REACT, ES6, and JSX. Also, it is a cheat sheet for me when developing. Will update continuously...
+
 **Collection of Useful Bookmarks** -> [*Go Here*](/bookmarks/bookmarks.md)
 
 FYI: [**Why I'm learning Front-End Development?**](/myjourneyintotech/WhyILearningFrontEndDevelopment.md)
@@ -364,8 +365,9 @@ React is an Open Source view library created and maintained by Facebook. It's a 
 * Create React in VS code(recommend)
   1. Install node.js
   2. Open VS code and and select an folder to store the new app
-  3. In the terminal, enter command `npx create-react-app [app-name]` 
-  4. Run the app using `npm start`
+  3. In the terminal, enter `npm install -g create-react-app`(only first time use react)  
+  4. Then, enter command `npx create-react-app [app-name]` 
+  5. Run the app using `npm start`
 * Add React to an HTML page(not recommend)
 ```
 <!DOCTYPE html>
@@ -420,6 +422,7 @@ ReactDOM.render(
 JSX Rules:
 * Nested JSX is that it must return a single element. Use `<div>` to wrap
 * JSX uses **className** keyword to define an HTML class
+* JSX use **htmlFor** keyword to define a label
 ## 8.3. Component
 Two ways to create a React component  
 * Using a JavaScript function - It creates a **stateless** functional component and receive data then render it, but not track changes.
@@ -439,6 +442,7 @@ class Welcome extends React.Component {
     return (
       <div>
       <h1>Hello World!</h1>;
+        {/* use {} to insert js code*/}
       <h2>{this.state.date.toLocaleTimeString()}</h2>
       </div>
   }
@@ -481,9 +485,8 @@ ReactDOM.render(
 //use join(", ") to pass an array as props
 ```
 * 
-
-
-Every React component can be self-closing: `<div />`
+Notice: Every React component can be self-closing: `<div />`  
+Component name much start with capital letter.
 
 # 9. Redux
 # 10. To be continued..
