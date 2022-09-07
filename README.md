@@ -362,6 +362,9 @@ switch(n) {
 # 8. React
 React is an Open Source view library created and maintained by Facebook. It's a great tool to render the User Interface (UI) of modern web applications.
 ## 8.1. Environment Set up
+* **Must Have** extensions list in VS Code to improve productivity  
+  * [*ES7+ React/Redux/React-Native snippets*](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets) - JavaScript and React/Redux snippets in ES7+ with Babel plugin features for VS Code  
+  * 
 * Create React in VS code(recommend)
   1. Install node.js
   2. Open VS code and and select an folder to store the new app
