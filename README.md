@@ -2,7 +2,7 @@
 A personal learning notes for front-end best practices including basic HTML, CSS, JS, SSAS, REACT, ES6, and JSX. Also, it is a cheat sheet for me when developing. Will update continuously...
 
 **Collection of Useful Bookmarks** -> [*Go Here*](/bookmarks/bookmarks.md)
-
+**Solution of all kind of problemsI have met** -> [*Go Here](/solutions/solutions.md)
 FYI: [**Why I'm learning Front-End Development?**](/myjourneyintotech/WhyILearningFrontEndDevelopment.md)
 
 - [1. Front-end Learning Notes](#1-front-end-learning-notes)
@@ -364,43 +364,18 @@ React is an Open Source view library created and maintained by Facebook. It's a 
 ## 8.1. Environment Set up
 * **Must Have** extensions list in VS Code to improve productivity  
   * [*ES7+ React/Redux/React-Native snippets*](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets) - JavaScript and React/Redux snippets in ES7+ with Babel plugin features for VS Code  
-  * 
+  * to be continued ...
 * Create React in VS code(recommend)
   1. Install node.js
   2. Open VS code and and select an folder to store the new app
   3. In the terminal, enter `npm install -g create-react-app`(only first time use react)  
-  4. Then, enter command `npx create-react-app [app-name]` (`npx create-react-app ./`)
+  4. Then, enter `npx create-react-app [app-name]` (`npx create-react-app ./`)
   5. Run the app using `npm start`
-* Add React to an HTML page(not recommend)
-```
-<!DOCTYPE html>
-<html lang="en">
-<title>Test React</title>
 
-<!-- Load React API -->
-<script src= "https://unpkg.com/react@16/umd/react.production.min.js"></script>
-<!-- Load React DOM-->
-<script src= "https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-<!-- Load Babel Compiler -->
-<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-
-<body>
-
-<div id="mydiv"></div>
-
-<script type="text/babel">
-    //  JSX Babel code goes here
-     function Hello() {
-        return <h1>Hello World!</h1>;
-      }
-
-      ReactDOM.render(<Hello />, document.getElementById('mydiv'))
-</script>
-
-</body>
-</html>
-```
-
+* Open a existing React project
+  1. Clone it from github or open local folder in VS code
+  2. In the  terminal, enter `npm install --legacy-peer-deps` to install all the dependencies in package.json file.(`npm install`)
+  3. 
 ## 8.2. JSX
 JSX is a syntax extension of JavaScript that allows you to write HTML directly within JavaScript. 
 ```
