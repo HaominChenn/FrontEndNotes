@@ -366,7 +366,7 @@ React is an Open Source view library created and maintained by Facebook. It's a 
   1. Install node.js
   2. Open VS code and and select an folder to store the new app
   3. In the terminal, enter `npm install -g create-react-app`(only first time use react)  
-  4. Then, enter command `npx create-react-app [app-name]` 
+  4. Then, enter command `npx create-react-app [app-name]` (`npx create-react-app ./`)
   5. Run the app using `npm start`
 * Add React to an HTML page(not recommend)
 ```

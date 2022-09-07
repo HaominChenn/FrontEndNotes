@@ -3,6 +3,7 @@
 - [2. Tech Blog and study material](#2-tech-blog-and-study-material)
 - [3. Language Tool(Grammar, translation)](#3-language-toolgrammar-translation)
 - [4. Assignment helper(for student)](#4-assignment-helperfor-student)
+- [5. API tools](#5-api-tools)
 # 1. Online Documentation Tool
 |     |     |     |     |
 | --- | --- | --- | --- |
@@ -26,4 +27,7 @@
 * [*Compare PDF*](https://tools.pdf24.org/zh/compare-pdf) - Compare the difference of two PDF
 * 
 ***
-#
+# 5. API tools
+* [*Rapid API*](https://rapidapi.com/) - A APIs platform
+
+***
