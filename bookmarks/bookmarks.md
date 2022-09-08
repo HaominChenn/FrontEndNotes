@@ -8,7 +8,7 @@
 |     |     |     |     |
 | --- | --- | --- | --- |
 | [*HTML*](https://devdocs.io/html/)  | [*CSS*](https://devdocs.io/css/)  | [JavaScript](https://devdocs.io/javascript/) | [*React.js*](https://devdocs.io/react/) |
-| [*HTTP*](https://devdocs.io/http/) | [*Web APIs*](https://devdocs.io/dom/) |
+| [*HTTP*](https://devdocs.io/http/) | [*Web APIs*](https://devdocs.io/dom/) |[*HTTP status code*](https://www.restapitutorial.com/httpstatuscodes.html)
 ***
 # 2. Tech Blog and study material
 * [*Road2Coding*](https://www.r2coding.com/#/README) - Focus on backend -> [*Github Entrance*](https://github.com/rd2coding/Road2Coding)
